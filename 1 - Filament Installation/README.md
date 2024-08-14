@@ -40,4 +40,6 @@ php artisan make:filament-user
 INFO  Success! admin@gmail.com may now log in at http://127.0.0.1:8000/admin/login.
 ```
 
+![Image](2.PNG)
+
 https://github.com/filamentphp/demo
