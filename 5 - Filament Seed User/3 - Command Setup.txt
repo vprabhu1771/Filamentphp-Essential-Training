@@ -1,0 +1,9 @@
+Create the seeder using the Artisan command:
+
+php artisan make:seeder UsersTableSeeder
+
+
+Create a new controller
+
+php artisan make:controller SeederController
+

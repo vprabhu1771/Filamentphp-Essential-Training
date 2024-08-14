@@ -1,0 +1,5 @@
+APP_ENV=local 
+
+change to
+
+APP_ENV=production 

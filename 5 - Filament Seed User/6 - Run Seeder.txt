@@ -1,0 +1,5 @@
+Finally, run the seeder using the Artisan command:
+
+php artisan db:seed
+
+This will populate your users table with a sample user. Remember to adjust the user details and password hash in the seeder according to your application's requirements.
