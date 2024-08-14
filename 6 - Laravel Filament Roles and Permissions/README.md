@@ -94,7 +94,7 @@
     php artisan migrate
     ```
 
-    
+
 1. **Create Fliment Resource Role**
     ```
     php artisan make:filament-resource Role
@@ -418,6 +418,22 @@
             return static::getModel()::count();
         }
     }
+    ```
+
+    ```php
+    <?php
+
+    namespace App\Filament\Resources\UserResource\Pages;
+
+    use App\Filament\Resources\UserResource;
+    use Filament\Actions;
+    use Filament\Resources\Pages\CreateRecord;
+
+    class CreateUser extends CreateRecord
+    {
+        protected static string $resource = UserResource::class;
+    }
+
     ```
 ![Image](6.PNG)
 ![Image](9.PNG)
