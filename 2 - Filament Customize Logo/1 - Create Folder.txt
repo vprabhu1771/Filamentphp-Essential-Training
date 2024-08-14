@@ -1,0 +1,3 @@
+resources\views
+
+-> vendor\filament-panels\components\logo.blade.php
