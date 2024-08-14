@@ -1,0 +1,10 @@
+https://filamentphp.com/docs/2.x/admin/appearance
+
+By default, the sidebar is only collapsible on mobile. You may make it collapsible on desktop as well.
+
+You must publish the configuration in order to access this feature.
+
+In config/filament.php, set the layout.sidebar.is_collapsible_on_desktop to true:
+
+
+https://filamentphp.com/docs/3.x/panels/navigation#collapsible-sidebar-on-desktop
