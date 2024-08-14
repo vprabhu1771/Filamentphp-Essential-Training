@@ -1,0 +1,7 @@
+https://filamentphp.com/plugins
+
+Spatie Roles Permission
+
+https://filamentphp.com/plugins/tharinda-rodrigo-spatie-roles-permissions
+
+
