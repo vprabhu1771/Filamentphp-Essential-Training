@@ -1,0 +1,18 @@
+Open app\Providers\Filament\AdminPanelProvider.php file
+
+use Filament\Panel;
+use Filament\Support\Colors\Color;
+ 
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        // ...
+        ->colors([
+            'danger' => Color::Rose,
+            'gray' => Color::Gray,
+            'info' => Color::Blue,
+            'primary' => Color::Indigo,
+            'success' => Color::Emerald,
+            'warning' => Color::Orange,
+        ]);
+}

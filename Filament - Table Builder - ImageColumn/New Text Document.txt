@@ -1,0 +1,49 @@
+Note: 
+
+Make sure image path logo.png Change to /logo.png
+
+
+
+use Filament\Tables\Columns\ImageColumn;
+ 
+ImageColumn::make('avatar')
+
+By default, the public disk will be used to retrieve images. You may pass a custom disk name to the disk() method
+
+project_folder -> public -> avatar.png
+
+
+
+
+Tables\Columns\ImageColumn::make('qrcode_path')->getStateUsing(fn($record) => "http://localhost:8000/" . $record->qrcode_path),
+
+Tables\Columns\ImageColumn::make('qrcode_path')
+                    ->getStateUsing(fn($record) => env('APP_URL') . "/" . $record->qrcode_path),
+
+Tables\Columns\ImageColumn::make('qrcode_path')->getStateUsing(fn() => 'https://placehold.co/600x400/png'),
+
+Tables\Columns\ImageColumn::make('image')->extraImgAttributes([
+                    'class' => 'border-2 border-primary-500'
+                ])->getStateUsing(fn() => 'https://placehold.co/600x400/png'),
+
+
+ImageColumn::make('coverphoto')
+    ->getStateUsing(function (Book $record): string {
+        return $record->imgurl;
+    })
+    ->extraImgAttributes([
+        'img' => 'src'
+    ]),
+
+
+https://github.com/filamentphp/filament/discussions/5141
+
+How to show image in table view?
+
+Tables\Columns\TextColumn::make('img')
+        ->getStateUsing(function (Book $record): string {
+        return "<img src='" . $record->coverphoto . "/'/>";
+    })->html(),
+
+Tables\Columns\TextColumn::make('qrcode_path')
+	->getStateUsing(fn($record) => dump(env('APP_URL'))),

@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Filament\Resources\FabricCodeResource\Pages;
+
+use App\Filament\Resources\FabricCodeResource;
+use Filament\Actions;
+use Filament\Resources\Pages\ListRecords;
+
+class ListFabricCodes extends ListRecords
+{
+    protected static string $resource = FabricCodeResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\CreateAction::make()->modalHeading(),
+        ];
+    }
+}

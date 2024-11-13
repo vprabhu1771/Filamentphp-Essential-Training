@@ -1,0 +1,1 @@
+https://filamentphp.com/docs/3.x/panels/configuration#customizing-the-maximum-content-width
