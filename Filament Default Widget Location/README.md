@@ -1,0 +1,1 @@
+\vendor\filament\filament\resources\views\widgets\account-widget.blade.php
