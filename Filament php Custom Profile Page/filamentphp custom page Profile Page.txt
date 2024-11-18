@@ -1,0 +1,43 @@
+https://www.answeroverflow.com/m/1162420701219786803
+
+https://github.com/filamentphp/filament/discussions/9012
+
+https://stackoverflow.com/questions/76898241/laravel-filament-3-custom-page-view-props
+
+https://github.com/filamentphp/filament/discussions/5553
+
+https://github.com/filamentphp/filament/discussions/1169
+
+<?php
+
+namespace App\Filament\Pages;
+
+use Filament\Pages\Page;
+
+use App\Models\Client;
+
+class MonthlySalesReport extends Page
+{
+    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+
+    protected static string $view = 'filament.pages.monthly-sales-report';
+
+    protected static ?string $navigationGroup = 'Reports';
+
+    // protected static ?string $slug = 'finance/{id}';
+	protected static bool $shouldRegisterNavigation = false;
+
+    # Assuming Finance is a model.
+	public Client $record; 
+
+
+    public function mount(int $id = 1): void 
+    {
+        // $this->form->fill();
+        // $this->record = (new Client)->FindOrFail($id);
+        $this->record = Client::first();
+    }
+}
+
+
+{{ $record }}
