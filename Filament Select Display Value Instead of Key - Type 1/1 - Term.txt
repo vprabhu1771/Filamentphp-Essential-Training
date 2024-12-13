@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Enums;
+
+enum Term : string
+{
+    case ONE_MONTH = '1 month';
+    case THREE_MONTHS = '3 months';
+    case SIX_MONTHS = '6 months';
+    case TWELVE_MONTHS = '12 months';
+
+    public static function getValues(): array
+    {
+        return array_column(Term::cases(), 'value');
+    }
+
+    public static function getKeyValues(): array
+    {
+        return array_column(Term::cases(), 'value', 'key');
+    }
+}

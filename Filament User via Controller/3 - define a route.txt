@@ -1,0 +1,12 @@
+Next, define a route in your routes/web.php file:
+
+use App\Http\Controllers\FilamentUserController;
+
+Route::get('/create-filament-user', [FilamentUserController::class, 'createAdminUser']);
+
+
+Now, when you access the route /create-filament-user in your browser, it will trigger the createAdminUser method in the FilamentUserController, 
+and it will execute the Artisan command to create the Filament user.
+
+Make sure to set a strong password in the controller method before deploying it to production. Also, 
+consider adding appropriate validation and error handling based on your application's requirements.

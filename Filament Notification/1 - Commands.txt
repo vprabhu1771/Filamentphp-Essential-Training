@@ -1,0 +1,16 @@
+composer require filament/notifications:"^3.2" -W
+
+# Laravel 10
+php artisan notifications:table
+
+php artisan make:model Feedback -m
+
+php artisan migrate
+
+php artisan make:filament-resource Feedback --generate
+
+php artisan make:observer FeedbackObserver --model=Feedback
+
+API Controller
+
+php artisan make:controller api/v2/FeedbackController --api --model=Feedback

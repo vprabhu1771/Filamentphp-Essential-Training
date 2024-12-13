@@ -1,0 +1,44 @@
+namespace App\Enums;
+
+enum AcademicYear: String
+{
+    case YEAR_2023_2024 = '2023-2024';
+    case YEAR_2024_2025 = '2024-2025';
+    case YEAR_2025_2026 = '2025-2026';
+
+    /**
+     * Get all enum values as an array.
+     *
+     * @return array
+     */
+    public static function getValues() : array
+    {
+        return array_column(AcademicYear::cases(), 'value');
+    }
+
+    /**
+     * Get key-value pairs of enum values.
+     *
+     * @return array
+     */
+    public static function getKeyValue() : array
+    {
+        return array_combine(
+            self::getValues(),
+            self::getValues()
+        );
+    }
+
+    /**
+     * Get key-value pairs with human-friendly labels.
+     *
+     * @return array
+     */
+    public static function getKeyLabel() : array
+    {
+        return array_combine(
+            array_map(fn($case) => str_replace('_', ' ', $case->name), AcademicYear::cases()),
+            self::getValues()
+        );
+    }
+}

@@ -1,0 +1,3 @@
+let me provide you with a more complete example. First, create a new controller using the Artisan command:
+
+php artisan make:controller FilamentUserController

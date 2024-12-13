@@ -1,0 +1,31 @@
+Now, open the generated controller file (FilamentUserController.php) and add the following code:
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+
+class FilamentUserController extends Controller
+{
+    public function createAdminUser()
+    {
+        $name = 'admin';
+        $email = 'admin@gmail.com';
+        $password = ''; // Set the desired password here
+
+        // Call the Artisan command programmatically
+        Artisan::call('make:filament-user', [
+            'name' => $name,
+            'email' => $email,
+            'password' => $password,
+        ]);
+
+        // Get the output of the Artisan command
+        $output = Artisan::output();
+
+        // You can return the output or handle it as needed
+        return response()->json(['message' => $output]);
+    }
+}

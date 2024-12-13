@@ -1,0 +1,15 @@
+use App\Enums\Term;
+
+Forms\Components\Select::make('term')
+	->options(Term::getKeyValues())
+	->default(Term::ONE_MONTH),
+
+
+TextColumn::make('term')
+    ->label('Term'),
+
+OR
+
+TextColumn::make('term')
+    ->label('Term')
+    ->formatStateUsing(fn (string $state) => Term::tryFrom($state)?->value ?? $state),

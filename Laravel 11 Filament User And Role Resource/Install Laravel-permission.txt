@@ -1,0 +1,39 @@
+Laravel-permission
+
+https://spatie.be/docs/laravel-permission/v6/introduction
+
+
+
+Associate users with roles and permissions
+
+1) You can install the package via composer:
+
+
+composer require spatie/laravel-permission
+
+
+
+2) Optional: The service provider will automatically get registered. Or you may manually add the service provider in your bootstrap/providers.php file:
+
+'providers' => [
+    // ...
+    Spatie\Permission\PermissionServiceProvider::class,
+];
+
+
+
+3)You should publish the migration and the config/permission.php config file with:
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+
+4) Clear your config cache. This package requires access to the permission config settings in order to run migrations. If you've been caching configurations locally, clear your config cache with either of these commands:
+
+ php artisan optimize:clear
+ # or
+ php artisan config:clear
+
+
+5) Run the migrations: After the config and migration have been published and configured, you can create the tables for this package by running:
+
+ php artisan migrate

@@ -1,0 +1,45 @@
+https://v2.filamentphp.com/tricks/password-form-fields
+
+https://filamentphp.com/docs/3.x/panels/installation#create-a-user
+
+https://stackoverflow.com/questions/76658702/filamentphp-make-group-of-menu-visible-and-invisible-conditionally
+
+
+composer create-project laravel/laravel laravel-filament-roles
+
+cd laravel-filament-roles
+
+
+composer require spatie/laravel-permission
+
+
+php artisan make:model Category -m
+
+php artisan migrate
+
+php artisan make:policy CategoryPolicy --model=Category
+
+php artisan serve
+
+
+
+
+Filament
+
+composer require filament/filament:"^3.1" -W
+ 
+php artisan filament:install --panels
+
+php artisan make:filament-user
+
+
+
+
+php artisan make:filament-resource User --generate
+
+php artisan make:filament-resource Role --generate
+
+php artisan make:filament-resource Permission --generate
+
+php artisan make:filament-resource Category --generate
+

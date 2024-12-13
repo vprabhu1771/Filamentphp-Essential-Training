@@ -1,0 +1,16 @@
+use App\Enums\AcademicYear;
+
+Forms\Components\Select::make('academic_year')
+    ->label('Academic Year')
+    ->options(AcademicYear::getKeyValue())
+    ->required(),
+
+
+TextColumn::make('academic_year')
+    ->label('Academic Year'),
+
+OR
+
+TextColumn::make('academic_year')
+    ->label('Academic Year')
+    ->formatStateUsing(fn (string $state) => AcademicYear::tryFrom($state)?->value ?? $state),
